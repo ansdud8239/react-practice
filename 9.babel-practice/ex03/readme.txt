@@ -11,3 +11,7 @@
         $ npx babel src/index.js -o dist/index.js --plugins @babel/plugin-transform-parameters
 
     - for..of 플러그인(@babel/plugin-transform-for-of)
+        $ npm i -D @babel/plugin-transform-for-of
+        $ npx babel src/index.js -o dist/index.js --plugins @babel/plugin-transform-for-of
+
+
