@@ -6,7 +6,6 @@ function Clock02(props) {
     let minites = now.getMinutes();
     let seconds = now.getSeconds();
 
-    ('0'+(hours>12?hours -12 : hours)).slice(-2)
     return (
         <div>
             {('0'+(hours>12?hours -12 : hours)).slice(-2)}
