@@ -4,6 +4,8 @@ var express = require('express');
 
 var port = 9090;
 
+//path D:\douzone2023\eclipse-workspace\react-practice\1.basics\ex01\public
+//console.log('path',(path.join(__dirname, "public")));
 var application = express().use(express.static(path.join(__dirname, "public")))
 http
     .createServer(application)
