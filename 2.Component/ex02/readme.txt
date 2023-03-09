@@ -19,13 +19,17 @@ ex02: Component Styling
     - [ex02]$ npm run debug src=05 (css-module=true)
 
 6) CSS in JS(Style Component), Less & Styleable
+    - npm i styled-components
+    - css-loader options: {module: true}
+    - [ex02]$ npm run debug src=05 (css-module=true)
 
 7) React Modal
   - 설치
     [ex02]$ npm i react-modal
+
 8) Modal : Material UI
 
-7) Font Awesome
+9) Font Awesome
   - 코어 설치
     [ex02]$ npm i @fortawesome/fontawesome-svg-core
     [ex02]$ npm i @fortawesome/react-fontawesome
@@ -37,7 +41,7 @@ ex02: Component Styling
 
 =================================================================
 1. 설치
-[ex02]$ npm i -D webpack webpack-cli webpack-dev-server style-loader css-loader node-sass sass-loader babel-loader @babel/core @babel/cli @babel/preset-env @babel/preset-react
+[ex02]$ npm i -D webpack webpack-cli webpack-dev-server style-loader css-loader node-sass sass-loader babel-loader @babel/core @babel/cli @babel/preset-env @babel/preset-react styled-components
 [ex02]$ npm i react react-dom prop-types
 
 2. 설정
@@ -51,5 +55,5 @@ webpack.config.js
   }
 
 4. 실행
-[ex02]$ npm run debug src=(01|02|...)
+[ex02]$ npm run debug src=(01|02|...) css-modules=(true|false)
 
