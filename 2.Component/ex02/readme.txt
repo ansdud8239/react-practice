@@ -1,22 +1,44 @@
-ex02: Property
+ex02: Component Styling
 
-01. props(property)
-  1) 컴포넌트의 데이터
-  2) 부모에서 자식으로 전달
-    - Component Communication(컴포넌트간의 통신), Data Flow
-    - TOP -> Down
-  3) 자식 컴포넌트에서 변경 불가
-  4) 부모가 소유하는 데이터
+1) Inline Styling
 
-  src/01: FoodList: 클래스 컴포넌트 
-  src/02: FoodList: Data Flow (Top -> Down): 클래스 컴포넌트
-  src/03: FoodList: Data Flow (Top -> Down): 함수 컴포넌트
-  src/04: Property Validation
+2) Normal CSS
+  - css-loader options: {module: false}
+  - [ex02]$ npm run debug src=02 css-modules=false
+
+3) CSS Module I
+  - css-loader options: {module: true}
+  - [ex02]$ npm run debug src=03 (css-modules=true)
+
+4) CSS Module II
+  - css-loader options: {module: true}
+  - [ex02]$ npm run debug src=04 (css-modules=true)  
+
+5) SASS & SCSS
+    - css-loader options: {module: true}
+    - [ex02]$ npm run debug src=05 (css-module=true)
+
+6) CSS in JS(Style Component), Less & Styleable
+
+7) React Modal
+  - 설치
+    [ex02]$ npm i react-modal
+8) Modal : Material UI
+
+7) Font Awesome
+  - 코어 설치
+    [ex02]$ npm i @fortawesome/fontawesome-svg-core
+    [ex02]$ npm i @fortawesome/react-fontawesome
+  - icon(light(유료), regular, solid(기본), brands(기업)) 선택 설치
+    [ex02]$ npm i @fortawesome/free-regular-svg-icons
+    [ex02]$ npm i @fortawesome/free-solid-svg-icons
+    [ex02]$ npm i @fortawesome/free-brands-svg-icons
+    
 
 =================================================================
 1. 설치
-  $ npm i -D webpack webpack-cli webpack-dev-server style-loader css-loader node-sass sass-loader babel-loader @babel/core @babel/cli @babel/preset-env @babel/preset-react
-  $ npm i react react-dom prop-types
+[ex02]$ npm i -D webpack webpack-cli webpack-dev-server style-loader css-loader node-sass sass-loader babel-loader @babel/core @babel/cli @babel/preset-env @babel/preset-react
+[ex02]$ npm i react react-dom prop-types
 
 2. 설정
 babel.config.json
@@ -29,5 +51,5 @@ webpack.config.js
   }
 
 4. 실행
-[ex01]$ npm run debug src=(01|02|03|04)
+[ex02]$ npm run debug src=(01|02|...)
 
