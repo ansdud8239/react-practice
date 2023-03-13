@@ -7,11 +7,16 @@ import data from './assets/json/data.json'
 
 const App = () => {
     //<Emaillist key={'To Do'} title={'To Do'} cards={cards.filter(card => card.status==='ToDo')}/>
-    const [email,setEmails] = useState(date);
+    const [emails,setEmails] = useState(data);
+    const notifyKeyWordChanged = function(keyword){
+        // keyword가 firstName or lastName or email
+       const emails =  data.filter(e => e.firstName.indexOf(keyword) != -1 ||e.lastName.indexOf(keyword) != -1 || e.email.indexOf(keyword) != -1)
+       setEmails(emails)
+    }
     return (
         <div id='App'>
             <RegisterForm/>
-            <Searchbar/>
+            <Searchbar callback={notifyKeyWordChanged}/>
             <Emaillist emails={emails}/>
         </div>
     );
