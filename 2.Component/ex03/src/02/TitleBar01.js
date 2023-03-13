@@ -21,6 +21,10 @@ export default class TitelBar01 extends Component {
    } 
     render() {
         return (
+
+
+
+            
             <div>
                 <h1
                     onClick={this.onClickHandler.bind(this)}
@@ -30,7 +34,8 @@ export default class TitelBar01 extends Component {
                 >Function Handler</h1>
                 {
                     // this.no vs this.state.no
-                    `${this.no} VS ${this.state.no}`
+                    
+                    `${this.no} vs ${this.state.no}`
                 }
             </div>
         )
