@@ -1,8 +1,8 @@
-import React from 'react';
+import React,{useState} from 'react';
 import Task from './Task';
 
-const TaskList = ({tasks}) => {
-    console.log(tasks);
+const TaskList = ({cardNo,tasks,callback}) => {
+
     return (
         <div>
              <ul>
@@ -10,8 +10,10 @@ const TaskList = ({tasks}) => {
                     tasks.map(task => <Task 
                                         key={task.no}
                                         no={task.no}
+                                        cardNo={cardNo}
                                         name={task.name}
                                         done={task.done}
+                                        callback={callback}
                                         />)
                 }
              </ul>
