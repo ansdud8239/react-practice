@@ -1,12 +1,11 @@
-{
+{ 
     "name":"ex03",
     "version":"1.0.0",
     "description":"",
     "main":"index.js",
     "scripts":{
-        "start":"npx webpack serve --progress",
-        "debug":"npx webpack serve --progress --env",
-        "build":"npx webpack"
+        "debug": "npx webpack serve --config config/webpack.config.js --progress --mode development --env",
+        "build": "npx webpack --config config/webpack.config.js --mode production"
     },
     "keywords":[],
     "author":"",
