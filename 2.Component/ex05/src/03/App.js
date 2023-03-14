@@ -6,7 +6,6 @@ export default class App extends Component {
     constructor() {
         super(...arguments);
     }
-
     render() {
         // 타이머는 콜백
         // 시분초 10이하이면 앞에 0붙이기

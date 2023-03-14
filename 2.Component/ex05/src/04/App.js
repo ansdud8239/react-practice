@@ -11,25 +11,34 @@ export default function App() {
 
     // 초마다 tick이 +1
     // 10초마다 clock이 없어짐
+    const now = new Date();
     const [ticks,setTicks] = useState(0);
+    const[time,setTime] = useState({
+        hours: now.getHours(),
+        minites : now.getMinutes(),
+        seconds : now.getSeconds()
+    });
 
-    // useEffect(()=> {
-    //     setInterval(function(){
-    //         //tick +1
-    //     },1000);
-    // },[])
+    //console.log(hours+":"+minites+":"+seconds);
+    
+     useEffect(()=> {
+         setInterval(function(){
+            //tick +1
+            console.log('time');
+         },1000);
+     },[])
     return (
         <div>
             <span>{ticks}</span>
             {
                 //10초 단위로 Clock UNMOUNT
-                ticks % 10 ===0 ?
-                null :
+                //ticks % 10 ===0 ?
+                //null :
             <Clock
                 message={'ex05: useEffect Hook example'}
-                hours={'10'}
-                minutes={'20'}
-                seconds={'05'}/>
+                hours={hours}
+                minutes={minites}
+                seconds={seconds}/>
             }
         </div>
     );
