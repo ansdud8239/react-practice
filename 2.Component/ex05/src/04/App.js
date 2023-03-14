@@ -3,42 +3,46 @@ import './assets/scss/App.scss'
 import Clock from './Clock';
 
 export default function App() {
-    // <Clock
-    // message={'ex05: useEffect Hook example'}
-    // hours={state.hours}
-    // minutes={state.minutes}
-    // seconds={state.seconds}/>
 
-    // 초마다 tick이 +1
-    // 10초마다 clock이 없어짐
     const now = new Date();
     const [ticks,setTicks] = useState(0);
-    const[time,setTime] = useState({
-        hours: now.getHours(),
-        minites : now.getMinutes(),
-        seconds : now.getSeconds()
+    const[state,setState] = useState({
+        hours: (now.getHours() % 12 ? now.getHours() % 12 : now.getHours()) < 10 ?
+        '0'+ (now.getHours() % 12 ? now.getHours() % 12 : now.getHours()):
+        (now.getHours() % 12 ? now.getHours() % 12 : now.getHours()) ,
+        minites : now.getMinutes() < 10 ? '0'+now.getMinutes():now.getMinutes(),
+        seconds : now.getSeconds() < 10 ? '0'+now.getSeconds():now.getSeconds(),
+        session : now.getHours() > 12 ? 'pm' : 'am'
     });
-
-    //console.log(hours+":"+minites+":"+seconds);
     
      useEffect(()=> {
-         setInterval(function(){
-            //tick +1
-            console.log('time');
-         },1000);
-     },[])
+         const intervalID =  setInterval(() => {
+            setState({
+                hours: (now.getHours() % 12 ? now.getHours() % 12 : now.getHours()) < 10 ?
+                 '0'+ (now.getHours() % 12 ? now.getHours() % 12 : now.getHours()):
+                 (now.getHours() % 12 ? now.getHours() % 12 : now.getHours()) ,
+                minites : now.getMinutes() < 10 ? '0'+now.getMinutes():now.getMinutes(),
+                seconds : now.getSeconds() < 10 ? '0'+now.getSeconds():now.getSeconds(),
+                session : now.getHours() > 12 ? 'pm' : 'am'
+            })
+            setTicks(ticks+1);
+        },1000);    
+        return () => {
+            clearInterval(intervalID);
+        }
+     },[state])
     return (
         <div>
-            <span>{ticks}</span>
             {
                 //10초 단위로 Clock UNMOUNT
-                //ticks % 10 ===0 ?
-                //null :
+                ticks % 10 === 0 ?
+                null :
             <Clock
                 message={'ex05: useEffect Hook example'}
-                hours={hours}
-                minutes={minites}
-                seconds={seconds}/>
+                hours={state.hours}
+                minutes={state.minites}
+                seconds={state.seconds}
+                session={state.session}/>
             }
         </div>
     );
