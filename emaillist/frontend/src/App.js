@@ -10,6 +10,7 @@ const App = () => {
     const [emails,setEmails] = useState(data);
     const notifyKeyWordChanged = function(keyword){
         // keyword가 firstName or lastName or email
+        console.log(keyword);
        const emails =  data.filter(e => e.firstName.indexOf(keyword) != -1 ||e.lastName.indexOf(keyword) != -1 || e.email.indexOf(keyword) != -1)
        setEmails(emails)
     }

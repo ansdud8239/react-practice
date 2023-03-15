@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Task from './Task';
 import styles from './assets/css/TaskList.css';
 
-const TaskList = ({cardNo,tasks,callbackAddTask}) => {
+const TaskList = ({tasks, callbackAddTask, callbackChangeTaskDone}) => {
 
     return (
         <div>
@@ -10,20 +10,19 @@ const TaskList = ({cardNo,tasks,callbackAddTask}) => {
                 {
                     tasks.map(task => <Task
                                         key={task.no}
-                                        no={task.no}
-                                        cardNo={cardNo}                                        
+                                        no={task.no}                                        
                                         name={task.name}
                                         done={task.done}
-                                        />)
+                                        callbackChangeTaskDone={callbackChangeTaskDone}/>)
                 }
             </ul>
-            <input 
-                type='text' 
+            <input
+                type='text'
+                placeholder={'태스크 추가'}
                 className={styles.TaskList__add_task}
-                placeholder='태스크 추가'
                 onKeyDown={(e) => {
-                    if(e.key === 'Enter'){
-                        callbackAddTask(e.target.value);
+                    if(e.key === 'Enter') {
+                        callbackAddTask(e.target.value);        
                     }
                 }}/>
         </div>
