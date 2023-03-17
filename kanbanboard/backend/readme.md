@@ -6,10 +6,17 @@
 		$ mvn -f kanbanboard/backend exec:exec clean package
 			: kanbanboad/backend/target에 jar파일이 생성 -> 원하는 서비스 위치에 이동 후 실행
 		테스트
-		$ java -Dspring.profileㄴ.active=production -jar kanbanboard/backend/target/kanbanboard.jar
+		$ java -Dspring.profiles.active=production -jar kanbanboard/backend/target/kanbanboard.jar
 
 
 *포트확인 : netstat -anp | grep 포트
+*gcc11 
+	$ yum install devtoolset-11
+	$ scl enable devtoolset-11 bash
+	$ g++ --version
+	환경설정
+	$ vi /etc/profile
+	scl enable devtoolset-11 bash 추가
 #####################################################################	
 
 2. frontend
