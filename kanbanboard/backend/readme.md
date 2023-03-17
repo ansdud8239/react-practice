@@ -3,7 +3,7 @@
 		eclipse Ctrl+F11 (스프링부트 애플리케이션 실행)
 	
 	2) 빌드 (배포)
-		$ mvn -f kanbanboad/backend exec:exec clean package
+		$ mvn -f kanbanboard/backend exec:exec clean package
 			: kanbanboad/backend/target에 jar파일이 생성 -> 원하는 서비스 위치에 이동 후 실행
 		테스트
 		$ java -Dspring.profileㄴ.active=production -jar kanbanboard/backend/target/kanbanboard.jar
